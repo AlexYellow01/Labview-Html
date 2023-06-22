@@ -1,0 +1,11 @@
+In this LabVIEW application, I have implemented a feature that allows me to modify a quote paragraph without directly altering the HTML code. The process is straightforward and does not require any changes to the HTML code itself.
+
+To achieve this, I utilized two HTML comments, <!--a--> and <!--b-->, which serve as markers to indicate the specific section of the code I wish to modify. These comments can be placed within various HTML elements such as headings, paragraphs, or any other content that requires alteration.
+
+In LabVIEW, I developed a code that opens the HTML file. To ensure compatibility across different machines, I adjusted the file path to be in the same folder as the HTML code. Next, I searched for the positions of <!--a--> and <!--b--> within the file.
+
+Once I identified the locations of <!--a--> and <!--b-->, I replaced the text within that section using a control on the front panel called "Text." Users can enter the desired text in this control, and it will be displayed in the target location.
+
+To implement this functionality, I utilized the "Replace Substring" method. I replaced the old text within the specified section by specifying the offset, which is the position following <!--a-->, and the length of the replacement, which is calculated as (position of <!--b-->) - (position of <!--a-->). To ensure that <!--b--> is not deleted, I subtracted 8 from the offset obtained from <!--b--> and <!--a-->'s positions.
+
+Finally, the updated code is sent back, reflecting the changes made through the LabVIEW application.
